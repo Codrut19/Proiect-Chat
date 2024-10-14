@@ -1,0 +1,14 @@
+<StackLayout class="page">
+  <StackLayout class="form">
+    <Image src="~/assets/logo.png" class="logo"></Image>
+    <Label class="header" [text]="isLoggingIn ? 'Login' : 'Sign Up'"></Label>
+
+    <TextField [(ngModel)]="email" hint="Email" keyboardType="email" autocorrect="false" autocapitalizationType="none" class="input"></TextField>
+    <TextField [(ngModel)]="password" hint="Password" secure="true" class="input"></TextField>
+
+    <TextField *ngIf="!isLoggingIn" [(ngModel)]="phoneNumber" hint="Phone Number" keyboardType="phone" class="input"></TextField>
+
+    <Button [text]="isLoggingIn ? 'Log In' : 'Sign Up'" (tap)="submit()" class="btn btn-primary"></Button>
+    <Label [text]="isLoggingIn ? 'Don't have an account?' : 'Back to login'" (tap)="toggleForm()" class="login-label"></Label>
+  </StackLayout>
+</StackLayout>

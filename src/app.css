@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fas {
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+  font-weight: 900;
+}
+
+.list-group-item {
+  padding: 15;
+  border-bottom-width: 1;
+  border-bottom-color: #e0e0e0;
+}
+
+.list-group-item-heading {
+  font-size: 16;
+  font-weight: bold;
+}
+
+.list-group-item-text {
+  font-size: 14;
+  color: #666;
+}
+
+.avatar {
+  width: 40;
+  height: 40;
+  border-radius: 20;
+  background-color: #3498db;
+  color: white;
+  font-size: 20;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: center;
+  margin-right: 10;
+}
+
+.message-sent {
+  background-color: #DCF8C6;
+  padding: 10;
+  margin: 5 10 5 50;
+  border-radius: 10;
+}
+
+.message-received {
+  background-color: #FFFFFF;
+  padding: 10;
+  margin: 5 50 5 10;
+  border-radius: 10;
+}
+
+.message-content {
+  font-size: 16;
+}
+
+.message-time {
+  font-size: 12;
+  color: #666;
+  text-align: right;
+}
+
+.input-bar {
+  background-color: #F0F0F0;
+  padding: 10;
+}
+
+.attach-button {
+  font-size: 20;
+  background-color: transparent;
+  border-width: 0;
+  margin-right: 10;
+}
+
+.message-input {
+  background-color: white;
+  border-radius: 20;
+  padding: 10;
+}
+
+.send-button {
+  font-size: 20;
+  background-color: #3498db;
+  color: white;
+  border-radius: 20;
+  width: 40;
+  height: 40;
+  padding: 0;
+  margin-left: 10;
+}
+
+.chat-list {
+  background-color: #E5DDD5;
+}

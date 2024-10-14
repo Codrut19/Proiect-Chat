@@ -1,0 +1,19 @@
+<ActionBar title="JustChat">
+  <ActionItem ios.position="right" android.position="actionBar">
+    <Label text="&#xf067;" class="fas" (tap)="onNewChat()"></Label>
+  </ActionItem>
+  <ActionItem ios.position="left" android.position="actionBar">
+    <Label text="&#xf2f5;" class="fas" (tap)="onLogout()"></Label>
+  </ActionItem>
+</ActionBar>
+
+<ListView [items]="chats$ | async" class="list-group">
+  <ng-template let-chat="item">
+    <GridLayout columns="auto, *, auto" rows="auto, auto" class="list-group-item" [nsRouterLink]="['/chat', chat.id]">
+      <Label [text]="chat.name | slice:0:1" class="avatar" row="0" col="0" rowspan="2"></Label>
+      <Label [text]="chat.name" class="list-group-item-heading" row="0" col="1"></Label>
+      <Label [text]="chat.lastMessage" class="list-group-item-text" row="1" col="1"></Label>
+      <Label [text]="chat.timestamp | date:'shortTime'" class="list-group-item-text text-right" row="0" col="2"></Label>
+    </GridLayout>
+  </ng-template>
+</ListView>

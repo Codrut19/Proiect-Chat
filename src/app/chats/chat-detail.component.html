@@ -1,0 +1,26 @@
+<ActionBar [title]="(chat$ | async)?.name">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back"></NavigationButton>
+  <ActionItem ios.position="right" android.position="actionBar" (tap)="onCall()">
+    <Label text="&#xf095;" class="fas"></Label>
+  </ActionItem>
+  <ActionItem ios.position="right" android.position="actionBar" (tap)="onVideoCall()">
+    <Label text="&#xf03d;" class="fas"></Label>
+  </ActionItem>
+</ActionBar>
+
+<GridLayout rows="*, auto">
+  <ListView [items]="messages$ | async" row="0" class="chat-list">
+    <ng-template let-message="item">
+      <StackLayout [class]="message.senderId === '1' ? 'message-sent' : 'message-received'">
+        <Label [text]="message.content" class="message-content" textWrap="true"></Label>
+        <Label [text]="message.timestamp | date:'shortTime'" class="message-time"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+
+  <GridLayout rows="auto" columns="auto, *, auto" row="1" class="input-bar">
+    <Button text="&#xf030;" class="fas attach-button" (tap)="onAttachFile()" col="0"></Button>
+    <TextField hint="Type a message" [(ngModel)]="newMessage" (returnPress)="onSendMessage()" col="1" class="message-input"></TextField>
+    <Button text="&#xf1d8;" class="fas send-button" (tap)="onSendMessage()" col="2"></Button>
+  </GridLayout>
+</GridLayout>
